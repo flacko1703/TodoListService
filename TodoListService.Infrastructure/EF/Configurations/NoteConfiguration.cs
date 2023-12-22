@@ -1,22 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TodoListProj.Domain.Aggregates.TodoListAggregate.Entities;
+using TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
+using TodoListService.Domain.Enum;
 
 namespace TodoListService.Infrastructure.EF.Configurations;
 
-public class NoteConfiguration : IEntityTypeConfiguration<Note>
+public class NoteConfiguration : IEntityTypeConfiguration<TaskEntry>
 {
-    public void Configure(EntityTypeBuilder<Note> builder)
+    public void Configure(EntityTypeBuilder<TaskEntry> builder)
     {
 
         //Id Configuration
         builder.HasKey(c => c.Id);
 
         builder.Property(c => c.Id)
-            .HasConversion(
-                v => v.Value,
-                v => v)
             .IsRequired()
+            .ValueGeneratedNever()
             .HasColumnOrder(1);
 
         //Title Configuration
@@ -34,12 +33,16 @@ public class NoteConfiguration : IEntityTypeConfiguration<Note>
             .HasColumnOrder(3);
         
         //IsDone Configuration
-        builder.Property(c => c.IsDone)
+        builder.Property(c => c.Status)
+            .HasConversion(
+                v => v.ToString(),
+                v => (Status)Enum.Parse(typeof(Status), v))
             .HasColumnOrder(4);
         
         //Tags Configuration
         builder.HasMany(x => x.Tags)
-            .WithOne();
+            .WithOne()
+            .OnDelete(DeleteBehavior.Cascade);
         
     }
 }

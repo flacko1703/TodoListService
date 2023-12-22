@@ -1,7 +1,7 @@
 namespace TodoListService.Infrastructure.EF.Options
 {
-    public class PostgresOptions
+    public class DbOptions
     {
-        public string ConnectionString { get; set; }
+        public string ConnectionString { get; set; } = string.Empty;
     }
 }

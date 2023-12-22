@@ -1,23 +1,25 @@
-﻿using TodoListService.Domain.Exceptions;
-using TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
+﻿using TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
 using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 using TodoListService.Domain.DomainEvents;
-using TodoListService.Domain.Exceptions.Note;
-using TodoListService.Domain.SeedWork;
+using TodoListService.Domain.DomainEvents.TagDomainEvents;
+using TodoListService.Domain.DomainEvents.TaskEntryDomainEvents;
+using TodoListService.Domain.DomainEvents.TodoListDomainEvents;
+using TodoListService.Domain.Exceptions.TaskEntry;
+using TodoListService.Shared.Abstractions.SeedWork;
 
 namespace TodoListService.Domain.Aggregates.TodoListAggregate;
 
-public sealed record TodoList : AggregateRoot<TodoListId>
+public sealed record TodoList : AggregateRoot
 {
     private TodoListTitle _title;
-    private List<Note> _notes = new();
+    private List<TaskEntry>? _taskEntries = new();
     
-    private TodoList(TodoListId id, TodoListTitle title, List<Note> notes)
+    private TodoList(TodoListId id, TodoListTitle title, List<TaskEntry> taskEntries)
         : this(id, title)
     {
         Id = id;
         _title = title;
-        _notes = notes;
+        _taskEntries = taskEntries;
     }
     
     private TodoList(TodoListId id, TodoListTitle title)
@@ -33,98 +35,121 @@ public sealed record TodoList : AggregateRoot<TodoListId>
     
     public TodoListTitle Title => _title;
 
-    public IReadOnlyList<Note>? Notes => _notes?.AsReadOnly();
+    public IReadOnlyList<TaskEntry>? TaskEntries => _taskEntries?.AsReadOnly();
     
-    public static TodoList CreateWithNotes(TodoListTitle title, List<Note> notes)
+    public static TodoList Create(TodoListTitle title, List<TaskEntry> taskEntries)
     {
-        if (notes.Any())
-        {
-            CreateDefault(title);
-        }
-        
-        var todoList = new TodoList(Guid.NewGuid(), title, notes);
-        todoList.AddDomainEvent(new TodoListCreatedDomainEvent(todoList.Id));
+        var todoList = new TodoList(Guid.NewGuid(), title, taskEntries);
+        todoList.RaiseDomainEvent(new TodoListCreatedDomainEvent(todoList.Id));
         return todoList; 
     }
     
     public static TodoList CreateDefault(TodoListTitle title)
     {
         var todoList = new TodoList(Guid.NewGuid(), title);
-        todoList.AddDomainEvent(new TodoListCreatedDomainEvent(todoList.Id));
+        todoList.RaiseDomainEvent(new TodoListCreatedDomainEvent(todoList.Id));
         return todoList;
     }
     
     public void UpdateTodoList(TodoListTitle title)
     {
         _title = title;
+        RaiseDomainEvent(new TodoListUpdatedDomainEvent(Id));
     }
     
-    public void UpdateTodoList(TodoListTitle title, IEnumerable<Note> notes)
+    public void UpdateTodoList(TodoListTitle title, IEnumerable<TaskEntry>? taskEntries)
     {
         _title = title;
-        _notes = notes.ToList();
+        _taskEntries = taskEntries?.ToList();
+        RaiseDomainEvent(new TodoListUpdatedDomainEvent(Id));
     }
     
-    public void AddNote(Note note)
+    public TodoList AddTaskEntry(TaskEntry taskEntry)
     {
-        var exists = _notes.Any(t => t.Id == note.Id);
+        var isExists = _taskEntries.Any(t => t.Id == taskEntry.Id);
         
-        if (exists)
+        if (isExists)
         {
-            throw new NoteAlreadyExistsException(note.Id);
+            throw new TaskEntryAlreadyExistsException(taskEntry.Id);
         }
         
-        _notes.Add(note);
+        _taskEntries?.Add(taskEntry);
         
-        AddDomainEvent(new NoteCreatedDomainEvent(Id, note.Id));
+        RaiseDomainEvent(new TaskEntryCreatedDomainEvent(taskEntry.Id));
+        
+        return this;
     }
     
-    public void AddNotes(IEnumerable<Note> notes)
+    public void AddTaskEntries(IEnumerable<TaskEntry> taskEntries)
     {
-        foreach (var record in notes)
+        foreach (var entry in taskEntries)
         {
-            AddNote(record);
-        }
-    }
-    
-    public void RemoveNote(NoteId noteId)
-    {
-        var note = _notes.FirstOrDefault(t => t.Id == noteId);
-        
-        if (note is null)
-        {
-            throw new NoteNotFoundException(Id);
-        }
-        
-        _notes.Remove(note);
-        
-        AddDomainEvent(new NoteRemovedDomainEvent(Id, noteId));
-    }
-    
-    public void RemoveNotes(IEnumerable<NoteId> todoRecordIds)
-    {
-        foreach (var todoRecordId in todoRecordIds)
-        {
-            RemoveNote(todoRecordId);
+            AddTaskEntry(entry);
         }
     }
     
-    public void UpdateNote(Note note)
+    public void AddTagToTaskEntry(TaskEntryId taskEntryId, Tag tag)
     {
-        var recordToUpdate = _notes.FirstOrDefault(t => t.Id == note.Id);
+        var taskEntry = _taskEntries?.FirstOrDefault(t => t.Id == taskEntryId.Value);
         
-        if (recordToUpdate is null)
+        if (taskEntry is null)
         {
-            throw new NoteNotFoundException(recordToUpdate?.Id);
+            throw new TaskEntryNotFoundException(Id);
         }
         
-        recordToUpdate.UpdateNote(note);
+        taskEntry.AddTag(tag);
+        
+        RaiseDomainEvent(new TagCreatedDomainEvent(tag.Id));
     }
     
     
-    public void RemoveAllRecords()
+    public void RemoveTagFromTaskEntry(TaskEntryId taskEntryId, TagId tagId)
     {
-        _notes.Clear();
+        var taskEntry = _taskEntries?.FirstOrDefault(t => t.Id == taskEntryId.Value);
+        
+        if (taskEntry is null)
+        {
+            throw new TaskEntryNotFoundException(Id);
+        }
+        
+        taskEntry.RemoveTag(tagId);
+        
+        RaiseDomainEvent(new TagRemovedDomainEvent(tagId));
     }
     
+    public void RemoveTaskEntry(TaskEntryId taskEntryId)
+    {
+        var taskEntry = _taskEntries?.FirstOrDefault(t => t.Id == taskEntryId.Value);
+        
+        if (taskEntry is null)
+        {
+            throw new TaskEntryNotFoundException(Id);
+        }
+        
+        _taskEntries?.Remove(taskEntry);
+        
+        RaiseDomainEvent(new TaskEntryRemovedDomainEvent(taskEntryId));
+    }
+    
+    public void UpdateTaskEntry(TaskEntry taskEntry)
+    {
+        var entry = _taskEntries?.FirstOrDefault(t => t.Id == taskEntry.Id);
+        
+        if (entry is null)
+        {
+            throw new TaskEntryNotFoundException(entry?.Id);
+        }
+        
+        entry.Update(taskEntry);
+        
+        RaiseDomainEvent(new TaskEntryUpdatedDomainEvent(taskEntry.Id));
+    }
+    
+    public void RemoveAllTaskEntries(IEnumerable<TaskEntryId> taskEntryIds)
+    {
+        foreach (var taskEntryId in taskEntryIds)
+        {
+            RemoveTaskEntry(taskEntryId);
+        }
+    }
 }

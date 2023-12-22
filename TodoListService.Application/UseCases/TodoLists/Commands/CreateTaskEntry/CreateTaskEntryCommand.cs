@@ -6,5 +6,5 @@ using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 
 namespace TodoListService.Application.UseCases.TodoLists.Commands.CreateTaskEntry;
 
-public record CreateNoteCommand(TodoListId TodoListId, CreateTaskEntryRequestDto TaskEntryRequestDto) 
+public record CreateTaskEntryCommand(TodoListId TodoListId, CreateTaskEntryRequestDto TaskEntryRequestDto) 
     : IRequest<Result<TaskEntryResponseDto>>;

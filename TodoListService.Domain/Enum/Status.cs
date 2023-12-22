@@ -1,6 +1,6 @@
 ﻿namespace TodoListService.Domain.Enum;
 
-public enum TaskState
+public enum Status
 {
     Created,
     InProgress,

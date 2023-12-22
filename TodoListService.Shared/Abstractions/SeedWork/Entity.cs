@@ -1,8 +1,8 @@
-﻿namespace TodoListService.Domain.SeedWork;
+﻿namespace TodoListService.Shared.Abstractions.SeedWork;
 
 public abstract record Entity
 {
-    public Guid Id { get; protected init; }
+    public Guid Id { get; init; }
 
     protected Entity(Guid id)
     {

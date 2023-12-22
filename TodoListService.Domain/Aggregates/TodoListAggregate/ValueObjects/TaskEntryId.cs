@@ -1,4 +1,5 @@
 ﻿using TodoListService.Domain.Exceptions.Tag;
+using TodoListService.Domain.Exceptions.TaskEntry;
 
 namespace TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 
@@ -8,7 +9,7 @@ public record struct TaskEntryId
     {
         if (value == Guid.Empty)
         {
-            throw new EmptyNoteIdException();
+            throw new EmptyTaskEntryIdException();
         }
         
         Value = value;

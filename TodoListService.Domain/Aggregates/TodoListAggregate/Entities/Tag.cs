@@ -1,16 +1,16 @@
 ﻿using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
-using TodoListService.Domain.SeedWork;
+using TodoListService.Shared.Abstractions.SeedWork;
 
 namespace TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
 
-public sealed record Tag : Entity<TagId>
+public sealed record Tag : Entity
 {
-    private TagName? _tagName;
+    private TagName _name;
     
-    private Tag(TagId id, TagName tagName) : base(id)
+    private Tag(TagId id, TagName name) : base(id)
     {
         Id = id;
-        _tagName = tagName;
+        _name = name;
     }
 
     private Tag()
@@ -18,13 +18,7 @@ public sealed record Tag : Entity<TagId>
         //For Entity Framework
     }
     
-    public TagName TagName => _tagName;
+    public TagName Name => _name;
     
     public static Tag Create(TagName tagName) => new(Guid.NewGuid(), tagName);
-    
-    
-    public void DeleteTag()
-    {
-        _tagName = null;
-    }
 }

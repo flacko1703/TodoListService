@@ -3,7 +3,7 @@ using MediatR;
 using TodoListService.Application.DTOs.Response;
 using TodoListService.Domain.Repositories;
 
-namespace TodoListService.Application.UseCases.TodoLists.Queries.GetNoteById;
+namespace TodoListService.Application.UseCases.TodoLists.Queries.GetTaskEntryById;
 
 public class GetNoteByIdQueryHandler : IRequestHandler<GetNoteByIdQuery, Result<TaskEntryResponseDto>>
 {

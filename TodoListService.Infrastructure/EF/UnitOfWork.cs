@@ -1,22 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TodoListService.Application.Abstractions;
-using TodoListProj.Domain.SeedWork;
 using TodoListService.Infrastructure.EF.Contexts;
+using TodoListService.Shared.Abstractions;
+using TodoListService.Shared.Abstractions.SeedWork;
 
 namespace TodoListService.Infrastructure.EF;
 
 public class UnitOfWork : IUnitOfWork
 {
-    private readonly TodoListDbContext _context;
+    private readonly ApplicationDbContext _dbContext;
 
-    public UnitOfWork(TodoListDbContext context)
+    public UnitOfWork(ApplicationDbContext dbContext)
     {
-        _context = context;
+        _dbContext = dbContext;
     }
-    
+
+
     public async Task TrackAuditableEntitiesAsync(CancellationToken cancellationToken = default)
     {
-        var entries = _context
+        var entries = _dbContext
             .ChangeTracker
             .Entries<IAuditableEntity>();
 
@@ -39,7 +40,6 @@ public class UnitOfWork : IUnitOfWork
     public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         await TrackAuditableEntitiesAsync(cancellationToken);
-        
-        await _context.SaveChangesAsync(cancellationToken);
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 }

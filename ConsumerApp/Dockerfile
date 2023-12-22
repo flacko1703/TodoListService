@@ -1,7 +1,8 @@
-﻿FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["ConsumerApp/ConsumerApp.csproj", "ConsumerApp/"]
 RUN dotnet restore "ConsumerApp/ConsumerApp.csproj"

@@ -1,4 +1,4 @@
-﻿using TodoListService.Domain.Exceptions.Note;
+﻿using TodoListService.Domain.Exceptions.TaskEntry;
 
 namespace TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 
@@ -8,7 +8,7 @@ public record TaskEntryText
     {
         if (string.IsNullOrEmpty(value))
         {
-            throw new EmptyNoteTextException();
+            throw new EmptyTaskEntryTextException();
         }
 
         Value = value;

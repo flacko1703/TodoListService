@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using MediatR;
-using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 using TodoListService.Application.DTOs.Response;
+using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 
-namespace TodoListService.Application.UseCases.TodoLists.Queries.GetNotesByTagQuery;
+namespace TodoListService.Application.UseCases.TodoLists.Queries.GetTaskEntryByTagQuery;
 
 public record GetNotesByTagQuery(TagId TagId) : IRequest<Result<IEnumerable<TaskEntryResponseDto>>>;

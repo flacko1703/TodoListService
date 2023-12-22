@@ -1,6 +1,6 @@
 ﻿namespace TodoListService.Shared.Messaging.Contracts;
 
-public record TodoListCreatedEvent
+public record TodoListCreated
 {
     public Guid Id { get; init; }
     

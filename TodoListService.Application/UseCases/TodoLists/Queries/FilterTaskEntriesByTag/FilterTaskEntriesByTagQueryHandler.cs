@@ -4,12 +4,12 @@ using TodoListService.Application.Services;
 
 namespace TodoListService.Application.UseCases.TodoLists.Queries.FilterTaskEntriesByTag;
 
-public class FilterTaskEntriesByTagCommandHandler 
+public class FilterTaskEntriesByTagQueryHandler 
     : IRequestHandler<FilterTaskEntriesByTagQuery, IEnumerable<TaskEntryResponseDto>>
 {
     private readonly ITodoListOperationService _todoListOperationService;
 
-    public FilterTaskEntriesByTagCommandHandler(ITodoListOperationService todoListOperationService)
+    public FilterTaskEntriesByTagQueryHandler(ITodoListOperationService todoListOperationService)
     {
         _todoListOperationService = todoListOperationService;
     }

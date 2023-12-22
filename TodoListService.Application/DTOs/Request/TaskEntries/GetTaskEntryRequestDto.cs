@@ -1,3 +1,3 @@
-﻿namespace TodoListService.Application.DTOs.Request.Note;
+﻿namespace TodoListService.Application.DTOs.Request.TaskEntries;
 
-public record GetNoteRequestDto(Guid NoteId);
+public record GetTaskEntryRequestDto(Guid TaskEntryId);

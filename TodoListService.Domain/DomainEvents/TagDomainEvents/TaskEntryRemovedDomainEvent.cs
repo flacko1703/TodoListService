@@ -1,8 +1,8 @@
 ﻿using TodoListService.Shared.Abstractions.SeedWork;
 
-namespace TodoListService.Domain.DomainEvents;
+namespace TodoListService.Domain.DomainEvents.TagDomainEvents;
 
-public record TaskEntryRemovedDomainEvent(Guid Id) : DomainEvent(Id)
+public record TagRemovedDomainEvent(Guid Id) : DomainEvent(Id)
 {
     
 }

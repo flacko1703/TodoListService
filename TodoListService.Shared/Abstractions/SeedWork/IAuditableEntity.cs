@@ -1,4 +1,4 @@
-﻿namespace TodoListService.Domain.SeedWork;
+﻿namespace TodoListService.Shared.Abstractions.SeedWork;
 
 public interface IAuditableEntity
 {

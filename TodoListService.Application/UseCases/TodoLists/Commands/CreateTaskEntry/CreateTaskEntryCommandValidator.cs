@@ -2,9 +2,9 @@
 
 namespace TodoListService.Application.UseCases.TodoLists.Commands.CreateTaskEntry;
 
-public class CreateNoteCommandValidator : AbstractValidator<CreateTaskEntryCommand>
+public class CreateTaskEntryCommandValidator : AbstractValidator<CreateTaskEntryCommand>
 {
-    public CreateNoteCommandValidator()
+    public CreateTaskEntryCommandValidator()
     {
         RuleFor(x => x.TodoListId)
             .NotEmpty()

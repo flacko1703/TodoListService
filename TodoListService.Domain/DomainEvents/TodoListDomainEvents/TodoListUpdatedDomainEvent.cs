@@ -1,3 +1,8 @@
-﻿namespace TodoListService.Domain.DomainEvents;
+﻿using TodoListService.Shared.Abstractions.SeedWork;
 
-public record TodoListUpdatedDomainEvent();
+namespace TodoListService.Domain.DomainEvents.TodoListDomainEvents;
+
+public record TodoListUpdatedDomainEvent(Guid Id) : DomainEvent(Id)
+{
+    
+}

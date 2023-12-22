@@ -1,7 +1,8 @@
-﻿using TodoListService.Application.DTOs.Request.Note;
+﻿using TodoListService.Application.DTOs.Request.TaskEntries;
+using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 
 namespace TodoListService.Application.DTOs.Request.TodoList;
 
-public record UpdateTodoListRequestDto(Guid Id, 
-    string Title, 
-    List<UpdateNoteRequestDto> Notes);
+public record UpdateTodoListRequestDto(TodoListId Id, 
+    TodoListTitle Title, 
+    List<UpdateTaskEntryRequestDto> Notes);

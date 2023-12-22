@@ -1,4 +1,4 @@
-﻿namespace TodoListService.Domain.SeedWork;
+﻿namespace TodoListService.Shared.Abstractions.SeedWork;
 
 /// <summary>
 /// Base record for Entities which are aggregates
@@ -9,7 +9,7 @@ public abstract record AggregateRoot : AuditableEntity, IDomainEvent
     
     public IEnumerable<IDomainEvent> DomainEvents => _domainEvents.ToList().AsReadOnly();
 
-    protected void AddDomainEvent(IDomainEvent eventItem)
+    protected void RaiseDomainEvent(IDomainEvent eventItem)
     {
        _domainEvents.Add(eventItem);
     }

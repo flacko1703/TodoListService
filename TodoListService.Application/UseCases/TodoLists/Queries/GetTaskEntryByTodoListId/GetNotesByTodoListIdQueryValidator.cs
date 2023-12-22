@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace TodoListService.Application.UseCases.TodoLists.Queries.GetNotesByTodoListId;
+namespace TodoListService.Application.UseCases.TodoLists.Queries.GetTaskEntryByTodoListId;
 
 public class GetNotesByTodoListIdQueryValidator : AbstractValidator<GetNotesByTodoListIdQuery>
 {

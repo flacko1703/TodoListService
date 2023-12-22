@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace TodoListService.Application.UseCases.TodoLists.Commands.DeleteNoteByIdCommand;
+namespace TodoListService.Application.UseCases.TodoLists.Commands.DeleteTaskEntryById;
 
-public class DeleteNoteByIdCommandValidator : AbstractValidator<DeleteTaskEntryByIdCommand>
+public class DeleteTaskEntryByIdCommandValidator : AbstractValidator<DeleteTaskEntryByIdCommand>
 {
-    public DeleteNoteByIdCommandValidator()
+    public DeleteTaskEntryByIdCommandValidator()
     {
         RuleFor(x => x.TodoListId)
             .NotEmpty();

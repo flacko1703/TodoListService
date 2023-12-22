@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace TodoListService.Domain.SeedWork;
+namespace TodoListService.Shared.Abstractions.SeedWork;
 
 /// <summary>
 /// Marker interface for domain events.

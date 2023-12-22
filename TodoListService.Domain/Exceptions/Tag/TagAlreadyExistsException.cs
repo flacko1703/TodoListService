@@ -1,5 +1,5 @@
 ﻿using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
-using TodoListService.Domain.SeedWork;
+using TodoListService.Shared.Abstractions.SeedWork;
 
 namespace TodoListService.Domain.Exceptions.Tag;
 

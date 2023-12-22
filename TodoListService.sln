@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Domain", "TodoListProj.Domain\TodoListProj.Domain.csproj", "{6E1FC8C4-8CE7-463A-A0EC-9EA203061866}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListService.Domain", "TodoListService.Domain\TodoListService.Domain.csproj", "{6E1FC8C4-8CE7-463A-A0EC-9EA203061866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Application", "TodoListProj.Application\TodoListProj.Application.csproj", "{656CCC7F-7258-4FDD-922F-41EAFA4E3899}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListService.Application", "TodoListService.Application\TodoListService.Application.csproj", "{656CCC7F-7258-4FDD-922F-41EAFA4E3899}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Infrastructure", "TodoListProj.Infrastructure\TodoListProj.Infrastructure.csproj", "{1809D2A2-3357-4C36-8076-AD44C6B8F86A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListService.Infrastructure", "TodoListService.Infrastructure\TodoListService.Infrastructure.csproj", "{1809D2A2-3357-4C36-8076-AD44C6B8F86A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9191BE09-1C13-4C98-886A-1745AE13816C}"
 EndProject
@@ -13,11 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.WebApi", "TodoListProj.WebApi\TodoListProj.WebApi.csproj", "{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListService.WebApi", "TodoListService.WebApi\TodoListService.WebApi.csproj", "{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Contracts", "TodoListProj.Contracts\TodoListProj.Contracts.csproj", "{E2C8F365-6E22-4318-8F0A-8C2A676A826D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListService.Shared", "TodoListService.Shared\TodoListService.Shared.csproj", "{E2C8F365-6E22-4318-8F0A-8C2A676A826D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoConsumerApp", "DemoConsumerApp\DemoConsumerApp.csproj", "{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A3373B94-C12B-4087-A115-099EE913BA30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoProjects", "DemoProjects", "{E3D2A616-731E-4DF1-A159-F9DCB4310AF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumerApp", "ConsumerApp\ConsumerApp.csproj", "{42DF0478-E724-4899-9153-C7FAA58DF255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherApp", "PublisherApp\PublisherApp.csproj", "{B2D37120-602C-4989-8F98-008BBE14B07A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,17 +51,22 @@ Global
 		{E2C8F365-6E22-4318-8F0A-8C2A676A826D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2C8F365-6E22-4318-8F0A-8C2A676A826D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2C8F365-6E22-4318-8F0A-8C2A676A826D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DF0478-E724-4899-9153-C7FAA58DF255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DF0478-E724-4899-9153-C7FAA58DF255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DF0478-E724-4899-9153-C7FAA58DF255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DF0478-E724-4899-9153-C7FAA58DF255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2D37120-602C-4989-8F98-008BBE14B07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D37120-602C-4989-8F98-008BBE14B07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2D37120-602C-4989-8F98-008BBE14B07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D37120-602C-4989-8F98-008BBE14B07A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{656CCC7F-7258-4FDD-922F-41EAFA4E3899} = {9191BE09-1C13-4C98-886A-1745AE13816C}
 		{6E1FC8C4-8CE7-463A-A0EC-9EA203061866} = {9191BE09-1C13-4C98-886A-1745AE13816C}
 		{1809D2A2-3357-4C36-8076-AD44C6B8F86A} = {9191BE09-1C13-4C98-886A-1745AE13816C}
-		{E2C8F365-6E22-4318-8F0A-8C2A676A826D} = {9191BE09-1C13-4C98-886A-1745AE13816C}
 		{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA} = {9191BE09-1C13-4C98-886A-1745AE13816C}
-		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E} = {9191BE09-1C13-4C98-886A-1745AE13816C}
+		{E2C8F365-6E22-4318-8F0A-8C2A676A826D} = {A3373B94-C12B-4087-A115-099EE913BA30}
+		{42DF0478-E724-4899-9153-C7FAA58DF255} = {E3D2A616-731E-4DF1-A159-F9DCB4310AF7}
+		{B2D37120-602C-4989-8F98-008BBE14B07A} = {E3D2A616-731E-4DF1-A159-F9DCB4310AF7}
 	EndGlobalSection
 EndGlobal

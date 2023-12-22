@@ -1,12 +1,12 @@
 ﻿using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
-using TodoListService.Domain.SeedWork;
+using TodoListService.Shared.Abstractions.SeedWork;
 
-namespace TodoListService.Domain.Exceptions.Note;
+namespace TodoListService.Domain.Exceptions.TaskEntry;
 
-public class NoteAlreadyExistsException : DomainException
+public class TaskEntryAlreadyExistsException : DomainException
 {
-    public NoteAlreadyExistsException(TaskEntryId taskEntryId) 
-        : base($"Note with id: {taskEntryId} already exists.")
+    public TaskEntryAlreadyExistsException(TaskEntryId taskEntryId) 
+        : base($"TaskEntry with id: {taskEntryId} already exists.")
     {
         
     }

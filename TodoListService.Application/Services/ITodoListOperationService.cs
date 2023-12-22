@@ -1,15 +1,23 @@
 ﻿using FluentResults;
-using TodoListService.Application.DTOs.Request.Note;
-using TodoListService.Application.DTOs.Request.Tag;
-using TodoListService.Application.DTOs.Request.TodoList;
 using TodoListService.Application.DTOs.Response;
-using TodoListService.Domain.Aggregates.TodoListAggregate;
+using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
+using TodoListService.Domain.Enum;
 
 namespace TodoListService.Application.Services;
 
-public interface ITodoListService
+public interface ITodoListOperationService
 {
-    Task<Result<TodoList>> AddNoteAsync(Guid todoListId, CreateNoteRequestDto noteRequestDto, CancellationToken cancellationToken);
-    Task<Result<IEnumerable<NoteResponseDto>>> FilterNotesByTagAsync(Guid tagId, CancellationToken cancellationToken);
-    Task<Result<IEnumerable<NoteResponseDto>>> FilterNotesByIsDoneAsync(bool isDone, CancellationToken cancellationToken);
+    Task<Result<IEnumerable<TaskEntryResponseDto>>> FilterTaskEntriesByTagAsync(TagId tagId, 
+        CancellationToken cancellationToken);
+    Task<Result<IEnumerable<TaskEntryResponseDto>>> FilterTaskEntriesByStatusAsync(Status status, 
+        CancellationToken cancellationToken);
+    
+    Task<Result<IEnumerable<TaskEntryResponseDto>>> ChangeTaskEntryStatus(TaskEntryId id, 
+        Status status, 
+        CancellationToken cancellationToken);
+    
+    Task<Result<IEnumerable<TaskEntryResponseDto>>> MoveTaskEntryToAnotherTodolist(TodoListId id, 
+        TaskEntryId taskEntryId, 
+        CancellationToken cancellationToken);
+    
 }

@@ -1,11 +1,13 @@
-﻿namespace TodoListService.Infrastructure.EF.Models;
+﻿using TodoListService.Domain.Enum;
 
-public record NoteModel
+namespace TodoListService.Infrastructure.EF.Models;
+
+public record TaskEntryModel
 {
     public Guid Id { get; set; }
     public string Title { get; set; } = string.Empty;
     public string? Text { get; set; } = string.Empty;
     public List<TagModel>? Tags { get; set; } = new();
-    public bool IsDone { get; set; }
+    public string Status { get; set; } = string.Empty;
     public Guid TodoListModelId { get; set; } 
 }

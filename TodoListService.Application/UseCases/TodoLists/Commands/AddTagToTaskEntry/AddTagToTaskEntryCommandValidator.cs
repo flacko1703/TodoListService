@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace TodoListService.Application.UseCases.TodoLists.Commands.AddTagToNote;
+namespace TodoListService.Application.UseCases.TodoLists.Commands.AddTagToTaskEntry;
 
-public class AddTagToNoteCommandValidator : AbstractValidator<AddTagToTaskEntryCommand>
+public class AddTagToTaskEntryCommandValidator : AbstractValidator<AddTagToTaskEntryCommand>
 {
-    public AddTagToNoteCommandValidator()
+    public AddTagToTaskEntryCommandValidator()
     {
         RuleFor(x => x.TodoListId)
             .NotEmpty()

@@ -1,3 +1,8 @@
 ﻿namespace TodoListService.Infrastructure.Outbox;
 
-public record OutboxMessageConsumer();
+public sealed class OutboxMessageConsumer
+{
+    public Guid Id { get; init; }
+    
+    public string Name { get; init; }
+}

@@ -16,131 +16,138 @@
       <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/Docker/docker-compose.generated.override.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/efCoreCommonOptions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/efCoreDialogsState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/restkit/RESTKit_CommonSetting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/restkit/RESTKit_Environment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListService/Docker/docker-compose.generated.override.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DemoConsumerApp/Consumers/TodoListCreatedConsumer.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DemoConsumerApp/DemoConsumerApp.csproj" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DemoConsumerApp/Dockerfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DemoConsumerApp/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/Abstractions/IUnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/ApplicationAssemblyReference.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Request/Notes/CreateNoteRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Request/Notes/GetNoteRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Request/Notes/UpdateNoteRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Request/TodoList/CreateTodoListRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Request/TodoList/GetTodoListRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Request/TodoList/UpdateTodoListRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Response/NoteResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Response/TagResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DTOs/Response/TodoListResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/Exceptions/FailedToAddTodoListException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/Mappings/MapsterConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/Messaging/Consumers/TodoListCreatedConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/Messaging/Publishers/TodoListCreatedPublisher.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/TodoListProj.Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetAllTodoLists/GetAllTodoListsQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetAllTodoLists/GetAllTodoListsQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetNotesByTagQuery/GetNotesByTagQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetNotesByTagQuery/GetNotesByTagQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetNotesByTagQuery/GetNotesByTagQueryValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQueryValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQueryValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Contracts/Contracts/TodoListCreatedEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Contracts/TodoListProj.Contracts.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/Entities/Note.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/Entities/Tag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/TodoList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/ValueObjects/NoteId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/ValueObjects/NoteText.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/ValueObjects/NoteTitle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/ValueObjects/TagId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/ValueObjects/TagName.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/ValueObjects/TodoListId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Aggregates/TodoListAggregate/ValueObjects/TodoListTitle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/DomainAssemblyReference.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/DomainEvents/NoteCreatedDomainEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/DomainEvents/NoteRemovedDomainEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/DomainEvents/NoteUpdatedDomainEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/DomainEvents/TodoListCreatedDomainEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/DomainEvents/TodoListDeletedDomainEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/InvalidReminderTimeException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Note/EmptyNoteTextException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Note/EmptyNoteTitleTextException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Note/NoteAlreadyExistsException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Note/NoteNotFoundException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Tag/EmptyNoteIdException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Tag/EmptyTagException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Tag/EmptyTagIdException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Tag/TagAlreadyExistsException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Tag/TagDoesNotExistException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/Tag/TagNotFoundException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/TodoList/EmptyTodoListIdException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Exceptions/TodoList/EmptyTodoListTitleException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/Repositories/ITodoListRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/SeedWork/AggregateRoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/SeedWork/AuditableEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/SeedWork/DomainException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/SeedWork/Entity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/SeedWork/Enumeration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/SeedWork/IAuditableEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/SeedWork/IDomainEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Domain/TodoListProj.Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/CompiledQueries/GetAllTodoListsCompiledQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Configurations/NoteConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Configurations/TagConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Configurations/TodoListConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Consts/DbTableNames.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Contexts/ITodoListDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Contexts/TodoListDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Interceptors/AuditableEntitiesInterceptor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Migrations/20231210230038_Initial.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Migrations/20231210230038_Initial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Migrations/TodoListDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Models/NoteModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Models/TagModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Models/TodoListModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Options/PostgresOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Repositories/TodoListRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/EF/UnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/Extensions/PostgreSqlConfigurationExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/Extensions/PostgreSqlServiceExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/InfrastructureAssemblyReference.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.Infrastructure/TodoListProj.Infrastructure.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/Configurations/ODataEdmModelConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/Controllers/BaseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/Controllers/TodoListController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/TodoListProj.WebApi.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.WebApi/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TodoListProj.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/Abstractions/IUnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/ApplicationAssemblyReference.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Request/Notes/CreateNoteRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Request/Notes/GetNoteRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Request/Notes/UpdateNoteRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Request/TodoList/CreateTodoListRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Request/TodoList/GetTodoListRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Request/TodoList/UpdateTodoListRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Response/NoteResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Response/TagResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DTOs/Response/TodoListResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/DependencyInjection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/Exceptions/FailedToAddTodoListException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/Mappings/MapsterConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/Messaging/Consumers/TodoListCreatedConsumer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/Messaging/Publishers/TodoListCreatedPublisher.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/TodoListService.Application.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetAllTodoLists/GetAllTodoListsQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetAllTodoLists/GetAllTodoListsQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetNotesByTagQuery/GetNotesByTagQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetNotesByTagQuery/GetNotesByTagQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetNotesByTagQuery/GetNotesByTagQueryValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQueryValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQueryValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Contracts/Contracts/TodoListCreatedEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Contracts/TodoListService.Contracts.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/Entities/Note.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/Entities/Tag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/TodoList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/ValueObjects/NoteId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/ValueObjects/NoteText.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/ValueObjects/NoteTitle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/ValueObjects/TagId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/ValueObjects/TagName.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/ValueObjects/TodoListId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Aggregates/TodoListAggregate/ValueObjects/TodoListTitle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/DomainAssemblyReference.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/DomainEvents/NoteCreatedDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/DomainEvents/NoteRemovedDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/DomainEvents/NoteUpdatedDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/DomainEvents/TodoListCreatedDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/DomainEvents/TodoListDeletedDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/InvalidReminderTimeException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Note/EmptyNoteTextException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Note/EmptyNoteTitleTextException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Note/NoteAlreadyExistsException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Note/NoteNotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Tag/EmptyNoteIdException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Tag/EmptyTagException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Tag/EmptyTagIdException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Tag/TagAlreadyExistsException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Tag/TagDoesNotExistException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/Tag/TagNotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/TodoList/EmptyTodoListIdException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Exceptions/TodoList/EmptyTodoListTitleException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/Repositories/ITodoListRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/SeedWork/AggregateRoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/SeedWork/AuditableEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/SeedWork/DomainException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/SeedWork/Entity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/SeedWork/Enumeration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/SeedWork/IAuditableEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/SeedWork/IDomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Domain/TodoListService.Domain.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/CompiledQueries/GetAllTodoListsCompiledQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Configurations/NoteConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Configurations/TagConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Configurations/TodoListConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Consts/DbTableNames.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Contexts/ITodoListDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Contexts/TodoListDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Interceptors/AuditableEntitiesInterceptor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Migrations/20231210230038_Initial.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Migrations/20231210230038_Initial.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Migrations/TodoListDbContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Models/NoteModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Models/TagModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Models/TodoListModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Options/PostgresOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/Repositories/TodoListRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/EF/UnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/Extensions/PostgreSqlConfigurationExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/Extensions/PostgreSqlServiceExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/InfrastructureAssemblyReference.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.Infrastructure/TodoListService.Infrastructure.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/Configurations/ODataEdmModelConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/Controllers/BaseController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/Controllers/TodoListController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/TodoListService.WebApi.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.WebApi/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TodoListService.sln" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mq-data/.erlang.cookie" afterDir="false" />
@@ -166,12 +173,18 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/e74356f198b598e97eaeea83e8b7b1f2bfe27c0a39fedf86bb7dc44827fbda/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/eaf74182ad7c943aaf043fd9e7bbb1d564713c6bd276e62966aaa618e9/LoggerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/f9daeeaab8409865442b5e80e634dc64dae9a14892fe81e0f17b46f51b2c48f8/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TodoListProj.Application/DTOs/Response/NoteResponseDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TodoListProj.Application/DTOs/Response/TodoListResponseDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TodoListProj.Infrastructure/EF/Options/PostgresOptions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TodoListProj.SampleService/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Application/DTOs/Response/NoteResponseDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Application/DTOs/Response/TodoListResponseDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Application/Mappings/MapsterConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Application/Messaging/Consumers/TodoListCreatedConsumer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Application/Messaging/Publishers/TodoListCreatedPublisher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Contracts/Contracts/TodoListCreatedEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Infrastructure/EF/CompiledQueries/GetAllTodoListsCompiledQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Infrastructure/EF/Configurations/TodoListConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Infrastructure/EF/Interceptors/AuditableEntitiesInterceptor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TodoListService.Infrastructure/EF/Options/PostgresOptions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiProvider">{
   &quot;contexts&quot;: [
@@ -204,30 +217,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.8387681&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "XThreadsFramesViewSplitterKey": "0.8387681",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\proto\\AppData\\Local\\JetBrains\\Shared\\vAny\\DecompilerCache&quot;,
-      &quot;C:\\Users\\proto\\AppData\\Local\\JetBrains\\Shared\\vAny\\SourcesCache&quot;,
-      &quot;C:\\Users\\proto\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\proto\\AppData\\Local\\JetBrains\\Shared\\vAny\\DecompilerCache",
+      "C:\\Users\\proto\\AppData\\Local\\JetBrains\\Shared\\vAny\\SourcesCache",
+      "C:\\Users\\proto\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="openRunningConfigInTab" value="true" />
   </component>
@@ -622,6 +635,7 @@
       <workItem from="1702425523484" duration="416000" />
       <workItem from="1702425960130" duration="1425000" />
       <workItem from="1702427440391" duration="17591000" />
+      <workItem from="1702482198861" duration="895000" />
     </task>
     <servers />
   </component>
@@ -643,135 +657,100 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQueryHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetTodoListById/GetTodoListByIdQueryHandler.cs</url>
           <line>22</line>
           <properties documentPath="X:\TodoList\TodoListProj.Application\UseCases\TodoListCases\Queries\GetTodoListByIdQueryHandler.cs" initialLine="20" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Infrastructure/EF/UnitOfWork.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Infrastructure/EF/UnitOfWork.cs</url>
           <line>18</line>
           <properties documentPath="X:\TodoList\TodoListProj.Infrastructure\EF\UnitOfWork.cs" initialLine="18" containingFunctionPresentation="Method 'TrackAuditableEntitiesAsync'">
             <startOffsets>
-              <option value="504" />
+              <option value="516" />
             </startOffsets>
             <endOffsets>
-              <option value="595" />
+              <option value="607" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommandHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteTodoListById/DeleteTodoListByIdCommandHandler.cs</url>
           <line>22</line>
           <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\DeleteTodoList\DeleteTodoListCommandHandler.cs" initialLine="22" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/CreateTodoList/CreateTodoListCommandHandler.cs</url>
           <line>22</line>
-          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\CreateTodoList\CreateTodoListCommandHandler.cs" initialLine="21" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="877" />
-            </startOffsets>
-            <endOffsets>
-              <option value="926" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\CreateTodoList\CreateTodoListCommandHandler.cs" initialLine="21" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandHandler.cs</url>
           <line>23</line>
           <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\UpdateNote\UpdateNoteCommandHandler.cs" initialLine="22" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommandHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/DeleteNoteByIdCommand/DeleteNoteByIdCommandHandler.cs</url>
           <line>17</line>
-          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\DeleteNoteByIdCommand\DeleteNoteByIdCommandHandler.cs" initialLine="17" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="590" />
-            </startOffsets>
-            <endOffsets>
-              <option value="683" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\DeleteNoteByIdCommand\DeleteNoteByIdCommandHandler.cs" initialLine="17" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Infrastructure/Services/TodoListService.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Infrastructure/Services/TodoListService.cs</url>
           <line>21</line>
           <properties documentPath="X:\TodoList\TodoListProj.Infrastructure\TodoListService.cs" initialLine="21" containingFunctionPresentation="Method 'GetNoteTagsAsync'" />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Infrastructure/Services/TodoListService.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Infrastructure/Services/TodoListService.cs</url>
           <line>32</line>
           <properties documentPath="X:\TodoList\TodoListProj.Infrastructure\TodoListService.cs" initialLine="32" containingFunctionPresentation="Method 'GetTodoListNotesAsync'" />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Infrastructure/Services/TodoListService.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Infrastructure/Services/TodoListService.cs</url>
           <line>43</line>
           <properties documentPath="X:\TodoList\TodoListProj.Infrastructure\TodoListService.cs" initialLine="43" containingFunctionPresentation="Method 'AddNoteToTodoListAsync'" />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Infrastructure/Services/TodoListService.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Infrastructure/Services/TodoListService.cs</url>
           <line>61</line>
           <properties documentPath="X:\TodoList\TodoListProj.Infrastructure\TodoListService.cs" initialLine="61" containingFunctionPresentation="Method 'AddTagToNoteAsync'" />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/AddNoteToList/AddNoteCommandValidator.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/AddNoteToList/AddNoteCommandValidator.cs</url>
           <line>7</line>
           <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\AddNoteToList\AddNoteCommandValidator.cs" initialLine="7" containingFunctionPresentation="Constructor 'AddNoteCommandValidator'" />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/AddNoteToList/AddNoteCommandHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/AddNoteToList/AddNoteCommandHandler.cs</url>
           <line>24</line>
           <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\AddNoteToList\AddNoteCommandHandler.cs" initialLine="23" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQueryHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Queries/GetNotesByTodoListId/GetNotesByTodoListIdQueryHandler.cs</url>
           <line>19</line>
-          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Queries\GetNotesByTodoListId\GetNotesByTodoListIdQueryHandler.cs" initialLine="19" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="717" />
-            </startOffsets>
-            <endOffsets>
-              <option value="808" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Queries\GetNotesByTodoListId\GetNotesByTodoListIdQueryHandler.cs" initialLine="19" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandHandler.cs</url>
           <line>22</line>
-          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\UpdateTodoList\UpdateTodoListCommandHandler.cs" initialLine="25" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="749" />
-            </startOffsets>
-            <endOffsets>
-              <option value="859" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\UpdateTodoList\UpdateTodoListCommandHandler.cs" initialLine="25" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TodoListProj.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandHandler.cs</url>
+          <url>file://$PROJECT_DIR$/TodoListService.Application/UseCases/TodoLists/Commands/UpdateNoteFromList/UpdateNoteCommandHandler.cs</url>
           <line>37</line>
-          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\UpdateNoteFromList\UpdateNoteCommandHandler.cs" initialLine="37" containingFunctionPresentation="Method 'Handle'">
-            <startOffsets>
-              <option value="1456" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1516" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="X:\TodoList\TodoListProj.Application\TodoLists\Commands\UpdateNoteFromList\UpdateNoteCommandHandler.cs" initialLine="37" containingFunctionPresentation="Method 'Handle'" />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints">

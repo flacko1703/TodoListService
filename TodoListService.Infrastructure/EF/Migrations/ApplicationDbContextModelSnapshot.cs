@@ -22,14 +22,36 @@ namespace TodoListService.Infrastructure.EF.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.Note", b =>
+            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.Tag", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid")
                         .HasColumnOrder(1);
 
-                    b.Property<bool?>("IsDone")
-                        .HasColumnType("boolean")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(2);
+
+                    b.Property<Guid?>("TaskEntryId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TaskEntryId");
+
+                    b.ToTable("Tag");
+                });
+
+            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.TaskEntry", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid")
+                        .HasColumnOrder(1);
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text")
                         .HasColumnOrder(4);
 
                     b.Property<string>("Text")
@@ -48,28 +70,7 @@ namespace TodoListService.Infrastructure.EF.Migrations
 
                     b.HasIndex("TodoListId");
 
-                    b.ToTable("Note");
-                });
-
-            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.Tag", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uuid")
-                        .HasColumnOrder(1);
-
-                    b.Property<Guid?>("NoteId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("TagName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnOrder(2);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NoteId");
-
-                    b.ToTable("Tag");
+                    b.ToTable("TaskEntry");
                 });
 
             modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.TodoList", b =>
@@ -155,28 +156,30 @@ namespace TodoListService.Infrastructure.EF.Migrations
                     b.ToTable("outbox_message_consumers", (string)null);
                 });
 
-            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.Note", b =>
-                {
-                    b.HasOne("TodoListService.Domain.Aggregates.TodoListAggregate.TodoList", null)
-                        .WithMany("Notes")
-                        .HasForeignKey("TodoListId");
-                });
-
             modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.Tag", b =>
                 {
-                    b.HasOne("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.Note", null)
+                    b.HasOne("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.TaskEntry", null)
                         .WithMany("Tags")
-                        .HasForeignKey("NoteId");
+                        .HasForeignKey("TaskEntryId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.Note", b =>
+            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.TaskEntry", b =>
+                {
+                    b.HasOne("TodoListService.Domain.Aggregates.TodoListAggregate.TodoList", null)
+                        .WithMany("TaskEntries")
+                        .HasForeignKey("TodoListId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.Entities.TaskEntry", b =>
                 {
                     b.Navigation("Tags");
                 });
 
             modelBuilder.Entity("TodoListService.Domain.Aggregates.TodoListAggregate.TodoList", b =>
                 {
-                    b.Navigation("Notes");
+                    b.Navigation("TaskEntries");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.OData;
-using TodoListService.WebApi.Configurations;
-using TodoListProj.Application;
+using TodoListService.Application;
 using TodoListService.Infrastructure;
+using TodoListService.WebApi.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,15 +12,14 @@ builder.Services
     .AddInfrastructureLayer(builder.Configuration);
 
 builder.Services.AddControllers()
-    .AddOData(opt
-    =>
-{
-    opt.AddRouteComponents(
-        routePrefix: "odata",
-        model: ODataEdmModelConfiguration.GetEdmModel());
-    opt.EnableQueryFeatures();
-    opt.SetMaxTop(100).Expand().Select().OrderBy().Filter();
-});
+    .AddOData(opt=>
+    {
+        opt.AddRouteComponents(
+            routePrefix: "odata",
+            model: ODataEdmModelConfiguration.GetEdmModel());
+        opt.EnableQueryFeatures();
+        opt.SetMaxTop(100).Expand().Select().OrderBy().Filter();
+    });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -47,8 +46,6 @@ if (app.Environment.IsDevelopment())
         config.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger Odata Demo Api");
     });
 }
-
-
 
 app.UseCors(options => options
     .AllowAnyOrigin()

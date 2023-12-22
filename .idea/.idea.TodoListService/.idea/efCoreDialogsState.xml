@@ -3,7 +3,7 @@
   <component name="EfCoreDialogsState">
     <option name="keyValueStorage">
       <map>
-        <entry key="Common:1809d2a2-3357-4c36-8076-ad44c6b8f86a:dbContext" value="TodoListProj.Infrastructure.EF.Contexts.TodoListDbContext" />
+        <entry key="Common:1809d2a2-3357-4c36-8076-ad44c6b8f86a:dbContext" value="TodoListService.Infrastructure.EF.Contexts.ApplicationDbContext" />
         <entry key="Common:buildConfiguration" value="Debug" />
         <entry key="Common:noBuild" value="false" />
         <entry key="Common:outputFolder" value="EF/Migrations" />

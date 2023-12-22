@@ -1,3 +1,5 @@
-﻿namespace TodoListService.Application.DTOs.Request.TodoList;
+﻿using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 
-public record CreateTodoListRequestDto(string Title);
+namespace TodoListService.Application.DTOs.Request.TodoList;
+
+public record CreateTodoListRequestDto(TodoListTitle Title);

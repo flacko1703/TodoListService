@@ -2,7 +2,7 @@
 
 internal static class DbTableNames
 {
-    public const string TodoListsTableName = "TodoLists";
-    public const string NotesTableName = "Notes";
-    public const string TagsTableName = "Tags";
+    public const string TodoLists = nameof(TodoLists);
+    public const string TaskEntries = nameof(TaskEntries);
+    public const string Tags = nameof(Tags);
 }

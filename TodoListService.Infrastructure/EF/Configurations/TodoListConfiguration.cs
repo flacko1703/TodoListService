@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TodoListProj.Domain.Aggregates.TodoListAggregate;
+using TodoListService.Domain.Aggregates.TodoListAggregate;
 
 namespace TodoListService.Infrastructure.EF.Configurations;
 
@@ -13,10 +13,8 @@ public class TodoListConfiguration : IEntityTypeConfiguration<TodoList>
         builder.HasKey(c => c.Id);
 
         builder.Property(c => c.Id)
-            .HasConversion(
-                v => v.Value,
-                v => v)
             .IsRequired()
+            .ValueGeneratedNever()
             .HasColumnOrder(1);
 
         //Title Configuration
@@ -27,7 +25,7 @@ public class TodoListConfiguration : IEntityTypeConfiguration<TodoList>
             .HasColumnOrder(2);
         
         //Notes Configuration
-        builder.HasMany(x => x.Notes)
+        builder.HasMany(x => x.TaskEntries)
             .WithOne();
         
         //Added Configuration
@@ -36,10 +34,19 @@ public class TodoListConfiguration : IEntityTypeConfiguration<TodoList>
             .HasColumnOrder(3);
         
         //Updated Configuration
-        builder.Property(c => c.UpdatedAtUtc)
+        builder.Property(c => c.UpdatedAtUtc)   
             .HasColumnName("Updated")
             .HasColumnOrder(4);
+
+        builder.Property(p => p.Version)
+            .IsConcurrencyToken()
+            .IsRowVersion()
+            .HasColumnName("xmin")
+            .HasColumnOrder(5);
         
-        
+        builder.HasMany(x => x.TaskEntries)
+            .WithOne()
+            .OnDelete(DeleteBehavior.Cascade);
+
     }
 }

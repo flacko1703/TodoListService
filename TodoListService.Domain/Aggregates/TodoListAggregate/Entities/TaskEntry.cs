@@ -1,21 +1,21 @@
 ﻿using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 using TodoListService.Domain.Enum;
 using TodoListService.Domain.Exceptions.Tag;
-using TodoListService.Domain.SeedWork;
+using TodoListService.Shared.Abstractions.SeedWork;
 
 namespace TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
 
-public record Note : Entity
+public record TaskEntry : Entity
 {
-    private NoteTitle _title;
-    private NoteText? _text;
+    private TaskEntryTitle _title;
+    private TaskEntryText? _text;
     private IList<Tag>? _tags = new List<Tag>();
     private Status _status;
     
-    private Note(NoteId id, 
-        NoteTitle title, 
-        NoteText? text, 
-        List<Tag>? tags,
+    private TaskEntry(TaskEntryId id, 
+        TaskEntryTitle title, 
+        TaskEntryText? text, 
+        IList<Tag>? tags,
         Status status = Status.Created) : this(id, title, text)
     {
         Id = id;
@@ -25,57 +25,57 @@ public record Note : Entity
         _status = status;
     }
     
-    private Note(NoteId id, 
-        NoteTitle title, 
-        NoteText? text) : base(id)
+    private TaskEntry(TaskEntryId id, 
+        TaskEntryTitle title, 
+        TaskEntryText? text) : base(id)
     {
         Id = id;
         _title = title;
         _text = text;
     }
     
-    private Note()
+    private TaskEntry()
     {
         //For Entity Framework
     }
     
-    public NoteTitle Title => _title;
+    public TaskEntryTitle Title => _title;
     
-    public NoteText? Text => _text;
+    public TaskEntryText? Text => _text;
 
     public IReadOnlyList<Tag>? Tags => _tags?.AsReadOnly();
     
     public Status Status => _status;
     
-    public static Note Create(NoteTitle noteTitle, 
-        NoteText? noteText, IEnumerable<Tag>? tags = default!)
+    public static TaskEntry Create(TaskEntryTitle taskEntryTitle, 
+        TaskEntryText? taskEntryText, IEnumerable<Tag>? tags = default!)
     {
         if (tags is null)
         {
-            CreateDefault(noteTitle, noteText);
+            CreateDefault(taskEntryTitle, taskEntryText);
         }
         
-        var task = new Note(Guid.NewGuid(), 
-            noteTitle, 
-            noteText,
+        var task = new TaskEntry(Guid.NewGuid(), 
+            taskEntryTitle, 
+            taskEntryText,
             tags?.ToList());
         return task;
     }
     
-    public static Note CreateDefault(NoteTitle noteTitle, 
-        NoteText? noteText)
+    public static TaskEntry CreateDefault(TaskEntryTitle taskEntryTitle, 
+        TaskEntryText? taskEntryText)
     {
-        var task = new Note(Guid.NewGuid(), 
-            noteTitle, 
-            noteText);
+        var task = new TaskEntry(Guid.NewGuid(), 
+            taskEntryTitle, 
+            taskEntryText);
         return task;
     }
-    public void UpdateNote(Note note)
+    public void Update(TaskEntry taskEntry)
     {
-        _title = note.Title;
-        _text = note.Text;
-        _tags = note.Tags?.ToList();
-        _status = note.Status;
+        _title = taskEntry.Title;
+        _text = taskEntry.Text;
+        _tags = taskEntry.Tags?.ToList();
+        _status = taskEntry.Status;
     }
     
     public Status GetStatus()
@@ -94,28 +94,37 @@ public record Note : Entity
         return _tags;
     }
     
-    public NoteTitle GetTitle()
+    public TaskEntryTitle GetTitle()
     {
         return _title;
     }
     
-    public NoteText? GetText()
+    public TaskEntryText? GetText()
     {
         return _text;
     }
     
-    public void UpdateTitle(NoteTitle title)
+    public void UpdateTitle(TaskEntryTitle title)
     {
         _title = title;
     }
     
-    public void UpdateText(NoteText text)
+    public void UpdateText(TaskEntryText text)
     {
         _text = text;
     }
     
     public void AddTag(Tag tag)
     {
+        _tags ??= new List<Tag>();
+        
+        var isExist = _tags.Any(x => x.Id.Equals(tag.Id));
+        
+        if (isExist)
+        {
+            throw new TagAlreadyExistsException(tag.Id, tag.Name);
+        }
+        
         _tags?.Add(tag);
     }
     

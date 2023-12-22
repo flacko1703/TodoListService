@@ -1,8 +1,10 @@
-﻿namespace TodoListService.Application.DTOs.Request.Note;
+﻿using TodoListService.Domain.Enum;
 
-public record UpdateNoteRequestDto(Guid TodoListId, 
-    Guid NoteId,
+namespace TodoListService.Application.DTOs.Request.TaskEntries;
+
+public record UpdateTaskEntryRequestDto(Guid TodoListId, 
+    Guid TaskEntryId,
     string Title, 
     string Text, 
     List<string> Tags, 
-    bool IsDone);
+    Status Status);

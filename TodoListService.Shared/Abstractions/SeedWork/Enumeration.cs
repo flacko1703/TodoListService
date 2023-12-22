@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace TodoListService.Domain.SeedWork;
+namespace TodoListService.Shared.Abstractions.SeedWork;
 
 /// <summary>
 /// Record implementation of Enumeration

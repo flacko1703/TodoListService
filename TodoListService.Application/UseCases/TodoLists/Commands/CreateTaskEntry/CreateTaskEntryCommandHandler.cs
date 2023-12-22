@@ -1,22 +1,26 @@
 ﻿using FluentResults;
 using Mapster;
 using MediatR;
-using TodoListService.Application.Abstractions;
 using TodoListService.Application.DTOs.Response;
 using TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
 using TodoListService.Domain.Repositories;
+using TodoListService.Shared.Abstractions;
+using TodoListService.Shared.Messaging.Contracts;
 
 namespace TodoListService.Application.UseCases.TodoLists.Commands.CreateTaskEntry;
 
-public class CreateNoteCommandHandler : IRequestHandler<CreateTaskEntryCommand, Result<TaskEntryResponseDto>>
+public class CreateTaskEntryCommandHandler : IRequestHandler<CreateTaskEntryCommand, Result<TaskEntryResponseDto>>
 {
     private readonly ITodoListRepository _todoListRepository;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IEventBus _eventBus;
 
-    public CreateNoteCommandHandler(ITodoListRepository todoListRepository, IUnitOfWork unitOfWork)
+    public CreateTaskEntryCommandHandler(ITodoListRepository todoListRepository, 
+        IUnitOfWork unitOfWork, IEventBus eventBus)
     {
         _todoListRepository = todoListRepository;
         _unitOfWork = unitOfWork;
+        _eventBus = eventBus;
     }
 
 
@@ -29,17 +33,26 @@ public class CreateNoteCommandHandler : IRequestHandler<CreateTaskEntryCommand, 
             return Result.Fail<TaskEntryResponseDto>("Todolist not found");
         }
         
-        var note = TaskEntry.Create(request.TaskEntryRequestDto.Title, 
+        var taskEntry = TaskEntry.Create(request.TaskEntryRequestDto.Title, 
             request.TaskEntryRequestDto.Text,
             request.TaskEntryRequestDto.Tags.Select(x => Tag.Create(x)).ToList());
         
-        todoList.AddTaskEntry(note);
+        todoList.AddTaskEntry(taskEntry);
         
         await _todoListRepository.UpdateAsync(todoList, cancellationToken);
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
-        var result = note.Adapt<TaskEntryResponseDto>();
+        await _eventBus.PublishAsync(new TaskEntryCreated
+        {
+            TodoListId = todoList.Id,
+            TaskEntryId = taskEntry.Id,
+            Title = taskEntry.Title.Value,
+            Text = taskEntry.Text.Value,
+            Status = taskEntry.Status.ToString(),
+        }, cancellationToken);
+        
+        var result = taskEntry.Adapt<TaskEntryResponseDto>();
         
         return result;
     }

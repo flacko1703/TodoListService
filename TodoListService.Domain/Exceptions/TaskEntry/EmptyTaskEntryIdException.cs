@@ -1,6 +1,6 @@
-﻿using TodoListService.Domain.SeedWork;
+﻿using TodoListService.Shared.Abstractions.SeedWork;
 
-namespace TodoListService.Domain.Exceptions.Tag;
+namespace TodoListService.Domain.Exceptions.TaskEntry;
 
 public class EmptyTaskEntryIdException : DomainException
 {

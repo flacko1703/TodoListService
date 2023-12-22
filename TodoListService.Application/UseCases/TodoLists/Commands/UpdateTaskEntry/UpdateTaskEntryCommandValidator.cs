@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace TodoListService.Application.UseCases.TodoLists.Commands.UpdateNoteFromList;
+namespace TodoListService.Application.UseCases.TodoLists.Commands.UpdateTaskEntry;
 
 public class UpdateTaskEntryCommandValidator : AbstractValidator<UpdateTaskEntryCommand>
 {

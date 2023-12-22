@@ -1,8 +1,11 @@
-﻿namespace TodoListService.Application.DTOs.Response;
+﻿using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
+using TodoListService.Domain.Enum;
+
+namespace TodoListService.Application.DTOs.Response;
 
 //Generate DTOs for note responses
-public record NoteResponseDto(Guid Id, 
+public record TaskEntryResponseDto(Guid Id, 
     string Title, 
     string? Text, 
     List<TagResponseDto>? Tags, 
-    bool? IsDone);
+    string Status);

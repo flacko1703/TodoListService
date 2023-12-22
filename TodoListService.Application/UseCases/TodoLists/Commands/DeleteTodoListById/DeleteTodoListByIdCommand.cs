@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 using MediatR;
-using TodoListProj.Domain.Aggregates.TodoListAggregate.ValueObjects;
+using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 using TodoListService.Application.DTOs.Response;
 
 namespace TodoListService.Application.UseCases.TodoLists.Commands.DeleteTodoListById;

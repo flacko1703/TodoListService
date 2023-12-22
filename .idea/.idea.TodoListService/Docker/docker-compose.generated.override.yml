@@ -3,21 +3,33 @@ services:
   todolist.webapi:
     build:
       context: "X:\\TodoList"
-      dockerfile: "TodoList.WebApi/Dockerfile"
+      dockerfile: "TodoListService.WebApi/Dockerfile"
       target: "base"
     command: []
     entrypoint:
-    - "dotnet"
-    - "/app/bin/Debug/net8.0/TodoList.WebApi.dll"
+    - "/riderDebugger/linux-x64/dotnet/dotnet"
+    - "/riderDebugger/JetBrains.Debugger.Worker.exe"
+    - "--mode=server"
+    - "--frontend-port=57100"
+    - "--backend-port=57300"
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
       NUGET_PACKAGES: "C:\\Users\\proto\\.nuget\\packages"
       NUGET_FALLBACK_PACKAGES: "C:\\Users\\proto\\.nuget\\packages"
+      RIDER_DEBUGGER_LOG_DIR: "/riderLogs"
+      RESHARPER_LOG_CONF: "/riderLogsConf/backend-log.xml"
     image: "todolist.webapi:dev"
-    ports: []
+    ports:
+    - "127.0.0.1:57022:57100"
+    - "127.0.0.1:57222:57300"
     volumes:
     - "C:\\Users\\proto\\.nuget\\packages:/root/.nuget/fallbackpackages"
-    - "X:\\TodoList\\TodoList.WebApi:/app:rw"
+    - "X:\\TodoList\\TodoListService.WebApi:/app:rw"
     - "X:\\TodoList:/src:rw"
+    - "C:\\Users\\proto\\AppData\\Local\\JetBrains\\RiderRemoteDebugger\\2023.2.3\\\
+      Linux64:/riderDebugger"
+    - "C:\\Users\\proto\\AppData\\Local\\Programs\\Rider 2/bin:/riderLogsConf"
+    - "C:\\Users\\proto\\AppData\\Local\\JetBrains\\Rider2023.2\\log\\DebuggerWorker\\\
+      JetBrains.Debugger.Worker.2023_12_22_10_32_05:/riderLogs:rw"
     working_dir: "/app"

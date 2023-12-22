@@ -1,6 +1,53 @@
 ﻿services:
   todolist.webapi:
     image: todolist.webapi
+    container_name: todolist.webapi
     build:
       context: .
-      dockerfile: TodoList.WebApi/Dockerfile
+      dockerfile: TodoListService.WebApi/Dockerfile
+    ports:
+        - "5000:8080"
+        - "5001:443"
+    networks:
+        - todolist-network
+    depends_on:
+        - todolist.db
+        - todolist.mq
+    restart: always
+      
+  todolist.db:
+    image: postgres:latest
+    container_name: todolist-db
+    environment:
+        POSTGRES_DB: todolist
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: Example96!
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-data:/etc/postgresql/
+    networks:
+      - todolist-network
+    restart: always
+        
+  todolist.mq:
+    image: rabbitmq:3.11.1-management
+    container_name: todolist-mq
+    hostname: todolistmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./mq-data:/etc/rabbitmq/
+      - ./mq-logs:/var/lib/rabbitmq/logs/
+    networks:
+        - todolist-network
+    restart: always
+    
+networks:
+  todolist-network:
+    driver: bridge
+

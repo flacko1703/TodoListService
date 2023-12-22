@@ -1,6 +1,9 @@
-﻿namespace TodoListService.Infrastructure.EF.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using TodoListService.Domain.Aggregates.TodoListAggregate;
 
-public interface IApplicationDbContext
+namespace TodoListService.Infrastructure.EF.Contexts;
+
+public interface IApplicationDbContext 
 {
-    
+    DbSet<TodoList> TodoLists { get; set; }
 }

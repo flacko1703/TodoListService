@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TodoListProj.Domain.Aggregates.TodoListAggregate.Entities;
+using TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
 
 namespace TodoListService.Infrastructure.EF.Configurations;
 
@@ -13,14 +13,12 @@ public class TagConfiguration : IEntityTypeConfiguration<Tag>
         builder.HasKey(c => c.Id);
 
         builder.Property(c => c.Id)
-            .HasConversion(
-                v => v.Value,
-                v => v)
             .IsRequired()
+            .ValueGeneratedNever()
             .HasColumnOrder(1);
 
         //Name Configuration
-        builder.Property(c => c.TagName)
+        builder.Property(c => c.Name)
             .HasConversion(x => x.Value, 
                 x => x)
             .IsRequired()

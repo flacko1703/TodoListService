@@ -1,4 +1,4 @@
-﻿namespace TodoListService.Application.Abstractions;
+﻿namespace TodoListService.Shared.Abstractions;
 
 public interface IUnitOfWork
 {

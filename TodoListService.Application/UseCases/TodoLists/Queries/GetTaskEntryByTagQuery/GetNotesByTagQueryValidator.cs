@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace TodoListService.Application.UseCases.TodoLists.Queries.GetNotesByTagQuery;
+namespace TodoListService.Application.UseCases.TodoLists.Queries.GetTaskEntryByTagQuery;
 
 public class GetNotesByTagQueryValidator : AbstractValidator<GetNotesByTagQuery>
 {

@@ -1,35 +1,47 @@
 ﻿using FluentResults;
 using Mapster;
 using MediatR;
-using TodoListProj.Domain.Aggregates.TodoListAggregate.Entities;
-using TodoListProj.Domain.Repositories;
+using TodoListService.Domain.Repositories;
 using TodoListService.Application.DTOs.Response;
+using TodoListService.Shared.Abstractions;
+using TodoListService.Shared.Messaging.Contracts;
 
 namespace TodoListService.Application.UseCases.TodoLists.Commands.UpdateTodoList;
 
 public class UpdateTodoListCommandHandler : IRequestHandler<UpdateTodoListCommand, Result<TodoListResponseDto?>>
 {
     private readonly ITodoListRepository _todoListRepository;
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IEventBus _eventBus;
 
-    public UpdateTodoListCommandHandler(ITodoListRepository todoListRepository)
+    public UpdateTodoListCommandHandler(ITodoListRepository todoListRepository, 
+        IUnitOfWork unitOfWork, IEventBus eventBus)
     {
         _todoListRepository = todoListRepository;
+        _unitOfWork = unitOfWork;
+        _eventBus = eventBus;
     }
     
     public async Task<Result<TodoListResponseDto?>> Handle(UpdateTodoListCommand request, CancellationToken cancellationToken)
     {
-        var todoList = await _todoListRepository.GetByIdAsync(request.UpdateTodoListRequestDto.Id, cancellationToken);
+        var todoList = await _todoListRepository
+            .GetByIdAsync(request.UpdateTodoListRequestDto.Id, cancellationToken);
         
         if (todoList is null)
         {
-            return Result.Fail(new Error($"Cannot find todolist with Id {request.UpdateTodoListRequestDto.Id}"));
+            return Result.Fail("Todo list not found");
         }
         
-        todoList.UpdateTodoList(request.UpdateTodoListRequestDto.Title,
-            request.UpdateTodoListRequestDto.Notes.Adapt<List<Note>>());
-        
         await _todoListRepository.UpdateAsync(todoList, cancellationToken);
+
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
         
-        return Result.Ok(request.UpdateTodoListRequestDto.Adapt<TodoListResponseDto?>());
+        await _eventBus.PublishAsync(new TodoListModified
+        {
+            Id = todoList.Id,
+            Title = todoList.Title.Value
+        }, cancellationToken);
+        
+        return Result.Ok(todoList.Adapt<TodoListResponseDto?>());
     }
 }

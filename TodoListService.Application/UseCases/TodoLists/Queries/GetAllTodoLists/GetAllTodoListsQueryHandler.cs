@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using Mapster;
 using MediatR;
-using TodoListProj.Domain.Repositories;
+using TodoListService.Domain.Repositories;
 using TodoListService.Application.DTOs.Response;
 
 namespace TodoListService.Application.UseCases.TodoLists.Queries.GetAllTodoLists;
@@ -17,8 +17,15 @@ public class GetAllTodoListsQueryHandler : IRequestHandler<GetAllTodoListsQuery,
     
     public async Task<Result<IEnumerable<TodoListResponseDto>>> Handle(GetAllTodoListsQuery request, CancellationToken cancellationToken)
     {
-        var result = await _todoListRepository.GetAllAsync(cancellationToken);
+        var todoLists = await _todoListRepository.GetAllAsync(cancellationToken);
         
-        return result.Adapt<List<TodoListResponseDto>>();
+        if (todoLists is null)
+        {
+            return Result.Fail<IEnumerable<TodoListResponseDto>>("Cannot find any todolists");
+        }
+        
+        var result = todoLists.Select(x => x.Adapt<TodoListResponseDto>());
+        
+        return Result.Ok(result);
     }
 }

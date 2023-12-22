@@ -12,4 +12,8 @@
       <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.13" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TodoListService.Shared\TodoListService.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

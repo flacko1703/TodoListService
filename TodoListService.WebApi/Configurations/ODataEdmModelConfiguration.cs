@@ -1,7 +1,6 @@
 ﻿using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
-using TodoListProj.Application.DTOs.Response;
-using TodoListService.Infrastructure.EF.Models;
+using TodoListService.Application.DTOs.Response;
 
 namespace TodoListService.WebApi.Configurations;
 
@@ -15,7 +14,7 @@ public static class ODataEdmModelConfiguration
 
         odataBuilder.EntityType<TodoListResponseDto>();
         
-        odataBuilder.EntitySet<TodoListResponseDto>("TodoLists");
+        odataBuilder.EntitySet<TodoListResponseDto>("TodoListsResponse");
         
         return odataBuilder.GetEdmModel();
     }

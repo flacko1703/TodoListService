@@ -1,5 +1,4 @@
-﻿using TodoListService.Domain.Exceptions;
-using TodoListService.Domain.Exceptions.TodoList;
+﻿using TodoListService.Domain.Exceptions.TodoList;
 
 namespace TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
 

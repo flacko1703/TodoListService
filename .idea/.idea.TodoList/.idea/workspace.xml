@@ -12,6 +12,7 @@
     <list default="true" id="54e5721e-006c-4706-9417-9b4cd49ca729" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoList/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/deployment.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.TodoListProj/.idea/encodings.xml" afterDir="false" />
@@ -287,7 +288,7 @@
       <workItem from="1699510475314" duration="396000" />
       <workItem from="1699515623772" duration="20059000" />
       <workItem from="1699558119729" duration="270000" />
-      <workItem from="1699558431957" duration="3229000" />
+      <workItem from="1699558431957" duration="4779000" />
     </task>
     <servers />
   </component>

@@ -1,9 +1,9 @@
 ﻿using MassTransit;
-using TodoListService.Application.Abstractions;
+using TodoListService.Shared.Abstractions;
 
-namespace TodoListService.Infrastructure.MessageBroker;
+namespace TodoListService.Shared.Messaging;
 
-internal sealed class EventBus : IEventBus
+public sealed class EventBus : IEventBus
 {
     private readonly IPublishEndpoint _publishEndpoint;
 

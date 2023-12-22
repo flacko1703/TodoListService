@@ -1,11 +1,11 @@
-﻿using TodoListService.Domain.SeedWork;
+﻿using TodoListService.Shared.Abstractions.SeedWork;
 
-namespace TodoListService.Domain.Exceptions.Note;
+namespace TodoListService.Domain.Exceptions.TaskEntry;
 
-public class EmptyNoteTextException : DomainException
+public class EmptyTaskEntryTextException : DomainException
 {
-    public EmptyNoteTextException() 
-        : base($"Note text is empty.")
+    public EmptyTaskEntryTextException() 
+        : base($"TaskEntry text is empty.")
     {
         
     }

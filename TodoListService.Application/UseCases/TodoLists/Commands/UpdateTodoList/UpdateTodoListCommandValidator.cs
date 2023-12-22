@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.Validators;
-using TodoListService.Application.DTOs.Request.Notes;
+using TodoListService.Application.DTOs.Request.TaskEntries;
 
 namespace TodoListService.Application.UseCases.TodoLists.Commands.UpdateTodoList;
 
@@ -22,9 +22,9 @@ public class UpdateTodoListCommandValidator : AbstractValidator<UpdateTodoListCo
     
 }
 
-public class UpdateNoteRequestDtoValidator : IPropertyValidator<UpdateTodoListCommand, UpdateNoteRequestDto>
+public class UpdateNoteRequestDtoValidator : IPropertyValidator<UpdateTodoListCommand, UpdateTaskEntryRequestDto>
 {
-    public bool IsValid(ValidationContext<UpdateTodoListCommand> context, UpdateNoteRequestDto? value)
+    public bool IsValid(ValidationContext<UpdateTodoListCommand> context, UpdateTaskEntryRequestDto? value)
     {
         return value is not null;
     }

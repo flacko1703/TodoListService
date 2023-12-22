@@ -1,11 +1,11 @@
-﻿using TodoListService.Domain.SeedWork;
+﻿using TodoListService.Shared.Abstractions.SeedWork;
 
-namespace TodoListService.Domain.Exceptions.Note;
+namespace TodoListService.Domain.Exceptions.TaskEntry;
 
-public class EmptyNoteTitleTextException : DomainException
+public class EmptyTaskEntryTitleTextException : DomainException
 {
-    public EmptyNoteTitleTextException() 
-        : base($"Note Title text cannot be empty.")
+    public EmptyTaskEntryTitleTextException() 
+        : base($"TaskEntry Title text cannot be empty.")
     {
         
     }

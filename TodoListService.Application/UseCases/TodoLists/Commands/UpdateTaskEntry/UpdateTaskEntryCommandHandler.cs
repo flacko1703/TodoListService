@@ -5,18 +5,21 @@ using TodoListService.Application.DTOs.Response;
 using TodoListService.Domain.Aggregates.TodoListAggregate.Entities;
 using TodoListService.Domain.Repositories;
 using TodoListService.Shared.Abstractions;
+using TodoListService.Shared.Messaging.Contracts;
 
-namespace TodoListService.Application.UseCases.TodoLists.Commands.UpdateNoteFromList;
+namespace TodoListService.Application.UseCases.TodoLists.Commands.UpdateTaskEntry;
 
 public class UpdateTaskEntryCommandHandler : IRequestHandler<UpdateTaskEntryCommand, Result<TaskEntryResponseDto>>
 {
     private readonly ITodoListRepository _todoListRepository;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IEventBus _eventBus;
     
-    public UpdateTaskEntryCommandHandler(ITodoListRepository todoListRepository, IUnitOfWork unitOfWork)
+    public UpdateTaskEntryCommandHandler(ITodoListRepository todoListRepository, IUnitOfWork unitOfWork, IEventBus eventBus)
     {
         _todoListRepository = todoListRepository;
         _unitOfWork = unitOfWork;
+        _eventBus = eventBus;
     }
 
     
@@ -42,6 +45,12 @@ public class UpdateTaskEntryCommandHandler : IRequestHandler<UpdateTaskEntryComm
         await _todoListRepository.UpdateAsync(todoList, cancellationToken);
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
+        
+        await _eventBus.PublishAsync(new TaskEntryModified
+        {
+            Id = taskEntry.Id,
+            TodoListId = todoList.Id
+        }, cancellationToken);
         
         return Result.Ok(taskEntry.Adapt<TaskEntryResponseDto>());
     }

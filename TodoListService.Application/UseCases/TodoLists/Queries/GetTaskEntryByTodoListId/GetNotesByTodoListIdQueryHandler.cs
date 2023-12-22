@@ -1,10 +1,10 @@
 ﻿using FluentResults;
 using Mapster;
 using MediatR;
-using TodoListService.Domain.Repositories;
 using TodoListService.Application.DTOs.Response;
+using TodoListService.Domain.Repositories;
 
-namespace TodoListService.Application.UseCases.TodoLists.Queries.GetNotesByTodoListId;
+namespace TodoListService.Application.UseCases.TodoLists.Queries.GetTaskEntryByTodoListId;
 
 public class GetNotesByTodoListIdQueryHandler : IRequestHandler<GetNotesByTodoListIdQuery, Result<IEnumerable<TaskEntryResponseDto>>>
 {

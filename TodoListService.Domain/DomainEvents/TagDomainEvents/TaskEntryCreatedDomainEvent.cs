@@ -1,9 +1,8 @@
-﻿using TodoListService.Domain.Aggregates.TodoListAggregate.ValueObjects;
-using TodoListService.Shared.Abstractions.SeedWork;
+﻿using TodoListService.Shared.Abstractions.SeedWork;
 
-namespace TodoListService.Domain.DomainEvents;
+namespace TodoListService.Domain.DomainEvents.TagDomainEvents;
 
-public sealed record TaskEntryCreatedDomainEvent(Guid Id) : DomainEvent(Id)
+public sealed record TagCreatedDomainEvent(Guid Id) : DomainEvent(Id)
 {
     
 }

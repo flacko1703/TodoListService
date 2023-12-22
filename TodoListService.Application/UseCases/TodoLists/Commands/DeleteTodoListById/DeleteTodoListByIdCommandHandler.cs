@@ -1,9 +1,9 @@
 ﻿using FluentResults;
-using Mapster;
 using MediatR;
-using TodoListProj.Domain.Repositories;
-using TodoListService.Application.Abstractions;
 using TodoListService.Application.DTOs.Response;
+using TodoListService.Domain.Repositories;
+using TodoListService.Shared.Abstractions;
+using TodoListService.Shared.Messaging.Contracts;
 
 namespace TodoListService.Application.UseCases.TodoLists.Commands.DeleteTodoListById;
 
@@ -11,26 +11,26 @@ public class DeleteTodoListByIdCommandHandler : IRequestHandler<DeleteTodoListBy
 {
     private readonly ITodoListRepository _todoListRepository;
     private readonly IUnitOfWork _unitOfWork;
-
-    public DeleteTodoListByIdCommandHandler(ITodoListRepository todoListRepository, IUnitOfWork unitOfWork)
+    private readonly IEventBus _eventBus;
+    
+    public DeleteTodoListByIdCommandHandler(ITodoListRepository todoListRepository, IUnitOfWork unitOfWork, IEventBus eventBus)
     {
         _todoListRepository = todoListRepository;
         _unitOfWork = unitOfWork;
+        _eventBus = eventBus;
     }
 
     public async Task<Result<TodoListResponseDto>> Handle(DeleteTodoListByIdCommand request, CancellationToken cancellationToken)
     {
-        var todoList = await _todoListRepository.GetByIdAsync(request.Id, cancellationToken);
-
-        if (todoList is null)
-        {
-            return Result.Fail(new Error($"Cannot find todolist with Id {request.Id}"));
-        }
-
-        await _todoListRepository.DeleteAsync(todoList.Id, cancellationToken);
-
+        await _todoListRepository.DeleteAsync(request.Id, cancellationToken);
+        
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
-        return todoList.Adapt<TodoListResponseDto>();
+        await _eventBus.PublishAsync(new TodoListDeleted
+        {
+            Id = request.Id
+        }, cancellationToken);
+
+        return Result.Ok();
     }
 }

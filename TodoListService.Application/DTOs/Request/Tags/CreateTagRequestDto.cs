@@ -1,3 +1,3 @@
-﻿namespace TodoListService.Application.DTOs.Request.Tag;
+﻿namespace TodoListService.Application.DTOs.Request.Tags;
 
-public record CreateTagRequestDto(string TagName);
+public record CreateTagRequestDto(string Name);

@@ -1,8 +1,8 @@
 ﻿using TodoListService.Shared.Abstractions.SeedWork;
 
-namespace TodoListService.Domain.DomainEvents;
+namespace TodoListService.Domain.DomainEvents.TodoListDomainEvents;
 
-public record TodoListDeletedDomainEvent(Guid Id) : DomainEvent(Id)
+public record TodoListRemovedDomainEvent(Guid Id) : DomainEvent(Id)
 {
     
 }
