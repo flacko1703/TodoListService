@@ -1,0 +1,23 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  todolist.webapi:
+    build:
+      context: "X:\\TodoList"
+      dockerfile: "TodoList.WebApi/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/TodoList.WebApi.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\proto\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\proto\\.nuget\\packages"
+    image: "todolist.webapi:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\proto\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "X:\\TodoList\\TodoList.WebApi:/app:rw"
+    - "X:\\TodoList:/src:rw"
+    working_dir: "/app"

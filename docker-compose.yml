@@ -1,0 +1,6 @@
+﻿services:
+  todolist.webapi:
+    image: todolist.webapi
+    build:
+      context: .
+      dockerfile: TodoList.WebApi/Dockerfile

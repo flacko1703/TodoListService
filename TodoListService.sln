@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Domain", "TodoListProj.Domain\TodoListProj.Domain.csproj", "{6E1FC8C4-8CE7-463A-A0EC-9EA203061866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Application", "TodoListProj.Application\TodoListProj.Application.csproj", "{656CCC7F-7258-4FDD-922F-41EAFA4E3899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Infrastructure", "TodoListProj.Infrastructure\TodoListProj.Infrastructure.csproj", "{1809D2A2-3357-4C36-8076-AD44C6B8F86A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9191BE09-1C13-4C98-886A-1745AE13816C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7947CB40-52A8-4E6D-949E-9AB6C9D443FB}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.WebApi", "TodoListProj.WebApi\TodoListProj.WebApi.csproj", "{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListProj.Contracts", "TodoListProj.Contracts\TodoListProj.Contracts.csproj", "{E2C8F365-6E22-4318-8F0A-8C2A676A826D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoConsumerApp", "DemoConsumerApp\DemoConsumerApp.csproj", "{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E1FC8C4-8CE7-463A-A0EC-9EA203061866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E1FC8C4-8CE7-463A-A0EC-9EA203061866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E1FC8C4-8CE7-463A-A0EC-9EA203061866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E1FC8C4-8CE7-463A-A0EC-9EA203061866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656CCC7F-7258-4FDD-922F-41EAFA4E3899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656CCC7F-7258-4FDD-922F-41EAFA4E3899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656CCC7F-7258-4FDD-922F-41EAFA4E3899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656CCC7F-7258-4FDD-922F-41EAFA4E3899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1809D2A2-3357-4C36-8076-AD44C6B8F86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1809D2A2-3357-4C36-8076-AD44C6B8F86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1809D2A2-3357-4C36-8076-AD44C6B8F86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1809D2A2-3357-4C36-8076-AD44C6B8F86A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C8F365-6E22-4318-8F0A-8C2A676A826D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C8F365-6E22-4318-8F0A-8C2A676A826D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C8F365-6E22-4318-8F0A-8C2A676A826D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C8F365-6E22-4318-8F0A-8C2A676A826D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{656CCC7F-7258-4FDD-922F-41EAFA4E3899} = {9191BE09-1C13-4C98-886A-1745AE13816C}
+		{6E1FC8C4-8CE7-463A-A0EC-9EA203061866} = {9191BE09-1C13-4C98-886A-1745AE13816C}
+		{1809D2A2-3357-4C36-8076-AD44C6B8F86A} = {9191BE09-1C13-4C98-886A-1745AE13816C}
+		{E2C8F365-6E22-4318-8F0A-8C2A676A826D} = {9191BE09-1C13-4C98-886A-1745AE13816C}
+		{7A7ADE51-60C1-41AC-9FE6-596A998BFBFA} = {9191BE09-1C13-4C98-886A-1745AE13816C}
+		{25CB0824-C8EF-4411-88B5-54DB6C6EC62E} = {9191BE09-1C13-4C98-886A-1745AE13816C}
+	EndGlobalSection
+EndGlobal
